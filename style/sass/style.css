@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-size: 14px;
+}
+
+body {
+  overflow: hidden;
+}
+
+.header {
+  padding: 20px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.header .logo a img {
+  width: 150px;
+}
+.header .bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  right: 20px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.header .bar .line {
+  width: 30px;
+  height: 2px;
+  background-color: black;
+}
+.header .bar:hover div {
+  transform-origin: top right;
+  margin-left: auto;
+  transform: rotateZ(-24deg);
+  transition: 0.4s;
+}
+.header .bar:hover div:nth-child(1) {
+  width: 20px;
+}
+.header .bar:hover div:nth-child(2) {
+  width: 25px;
+}
+.header .menu-list {
+  background-color: #000;
+  position: absolute;
+  right: -80%;
+  top: 0;
+  width: 80%;
+  min-height: 100vh;
+  padding: 0 20px;
+  transition: 0.9s;
+}
+@media (min-width: 768px) {
+  .header .menu-list {
+    width: 25%;
+  }
+}
+.header .menu-list.show-list {
+  right: 0;
+}
+.header .menu-list .menu-logo img {
+  width: 160px;
+}
+.header .menu-list .menu-list-header {
+  display: flex;
+  gap: 3px;
+  padding-bottom: 15px;
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.header .menu-list .menu-list-header button {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid rgb(112, 145, 255);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s;
+}
+.header .menu-list .menu-list-header button span:nth-child(1) {
+  transform: translateY(10px);
+  transition: transform 0.4s;
+}
+.header .menu-list .menu-list-header button span:nth-child(2) {
+  transform: translateY(50px);
+  transition: transform 0.4s;
+}
+.header .menu-list .menu-list-header button:hover {
+  width: 70px;
+  height: 40px;
+  border-radius: 2px;
+}
+.header .menu-list .menu-list-header button:hover span:nth-child(1) {
+  transform: translateY(-20px);
+}
+.header .menu-list .menu-list-header button:hover span:nth-child(2) {
+  transform: translateY(-3px);
+}
+.header .menu-list .alt-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .menu-list .drop-menu-list {
+  position: relative;
+}
+.header .menu-list .drop-menu-list .plus {
+  padding: 16px;
+  color: #fff;
+  border-left: 1px solid white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+}
+.header .menu-list .drop-menu-list .plus .fa-plus {
+  font-size: 20px;
+}
+.header .menu-list .drop-menu-list .plus .fa-plus.rot {
+  transform: rotateZ(45deg);
+}
+.header .menu-list .drop-menu-list .plus:hover {
+  background-color: white;
+  color: black;
+}
+.header .menu-list .drop-menu-list .drop-menu {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.header .menu-list .drop-menu-list .drop-menu.show {
+  transition: 0.4s;
+  position: relative;
+  top: 10px;
+  z-index: 1111;
+  transition: 0.2s;
+}
+.header .menu-list .drop-menu-list .drop-menu li {
+  padding-left: 15px;
+  border-bottom: none;
+  border-top: 1px solid white;
+}
+.header li {
+  padding: 20px 5px 10px 5px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+}
+.header li a {
+  color: #fff;
+  display: block;
+  padding-bottom: 8px;
+}
+.header li a:hover {
+  color: rgb(51, 51, 255);
+}/*# sourceMappingURL=style.css.map */

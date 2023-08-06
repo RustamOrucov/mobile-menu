@@ -1,0 +1,194 @@
+.header {
+    padding: 20px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .logo {
+        a {
+            img {
+                width: 150px;
+            }
+        }
+    }
+
+    .bar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        right: 20px;
+        transition: .4s;
+        cursor: pointer;
+
+        .line {
+            width: 30px;
+            height: 2px;
+            background-color: black;
+
+        }
+
+        &:hover div {
+            transform-origin: top right;
+            margin-left: auto;
+            transform: rotateZ(-24deg);
+            transition: .4s;
+        }
+
+        &:hover div:nth-child(1) {
+            width: 20px;
+        }
+
+        &:hover div:nth-child(2) {
+            width: 25px;
+        }
+
+    }
+
+    .menu-list {
+        background-color: #000;
+        position: absolute;
+        right: -80%;
+        top: 0;
+        width: 80%;
+        min-height: 100vh;
+        padding: 0 20px;
+        transition: .9s;
+
+        @media (min-width: 768px) {
+            width: 25%;
+        }
+
+        &.show-list {
+            right: 0;
+        }
+
+        .menu-logo {
+            img {
+                width: 160px;
+            }
+        }
+
+        .menu-list-header {
+            display: flex;
+            gap: 3px;
+            padding-bottom: 15px;
+            border: none;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            button {
+                color: #fff;
+                background-color: transparent;
+                border: 1px solid rgb(112, 145, 255);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                transition: .4s;
+
+                span:nth-child(1) {
+                    transform: translateY(10px);
+                    transition: transform .4s;
+                }
+
+                span:nth-child(2) {
+                    transform: translateY(50px);
+                    transition: transform .4s;
+                }
+
+                &:hover {
+                    width: 70px;
+                    height: 40px;
+                    border-radius: 2px;
+                }
+
+                &:hover span:nth-child(1) {
+                    transform: translateY(-20px);
+                }
+
+                &:hover span:nth-child(2) {
+                    transform: translateY(-3px);
+
+                }
+            }
+        }
+
+        .alt-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .drop-menu-list {
+            position: relative;
+
+            .plus {
+                padding: 16px;
+                color: #fff;
+                border-left: 1px solid white;
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 20px;
+
+                .fa-plus {
+                    font-size: 20px;
+
+                    &.rot {
+                        transform: rotateZ(45deg);
+                    }
+                }
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+
+            .drop-menu {
+                position: absolute;
+                top: 0;
+                z-index: -1;
+
+                &.show {
+                    transition: .4s;
+                    position: relative;
+                    top: 10px;
+                    z-index: 1111;
+                    transition: .2s;
+                }
+            }
+
+            .drop-menu li {
+                padding-left: 15px;
+                border-bottom: none;
+                border-top: 1px solid white;
+
+            }
+        }
+    }
+
+    li {
+        padding: 20px 5px 10px 5px;
+        border-bottom: 1px solid rgb(210, 210, 210);
+
+        a {
+            color: #fff;
+            display: block;
+            padding-bottom: 8px;
+
+            &:hover {
+                color: rgb(51, 51, 255);
+            }
+
+        }
+    }
+}
